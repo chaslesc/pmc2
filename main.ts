@@ -28,7 +28,7 @@ input.onButtonPressed(Button.A, function () {
             `)
     }
     if (MonChoix >= 3) {
-        MonScore = 0
+        MonChoix = 0
     }
 })
 radio.onReceivedNumberDeprecated(function (ChoixAdversaire) {

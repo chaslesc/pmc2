@@ -1,6 +1,6 @@
 input.onButtonPressed(Button.A, function () {
-    MonChoix = Math.randomRange(0, 2)
-    if (MonChoix == 0) {
+    MonChoix = MonChoix + 1
+    if (MonChoix == 1) {
         basic.showLeds(`
             # # . . .
             # . # . .
@@ -8,28 +8,31 @@ input.onButtonPressed(Button.A, function () {
             # . . # .
             # # # # .
             `)
-    } else {
-        if (MonChoix == 1) {
-            basic.showLeds(`
-                # # # # .
-                # # # # #
-                . # # . .
-                . # # . .
-                . # # . .
-                `)
-        } else {
-            basic.showLeds(`
-                # # . . #
-                # # . # .
-                . . # . .
-                # # . # .
-                # # . . #
-                `)
-        }
+    }
+    if (MonChoix == 2) {
+        basic.showLeds(`
+            # # # # .
+            # # # # #
+            . # # . .
+            . # # . .
+            . # # . .
+            `)
+    }
+    if (MonChoix == 3) {
+        basic.showLeds(`
+            # # . . #
+            # # . # .
+            . . # . .
+            # # . # .
+            # # . . #
+            `)
+    }
+    if (MonChoix >= 3) {
+        MonScore = 0
     }
 })
 radio.onReceivedNumberDeprecated(function (ChoixAdversaire) {
-    if (MonChoix == 0 && ChoixAdversaire == 0) {
+    if (MonChoix == 1 && ChoixAdversaire == 1) {
         basic.showLeds(`
             . . . # #
             . . # . #
@@ -50,7 +53,7 @@ radio.onReceivedNumberDeprecated(function (ChoixAdversaire) {
         basic.showString("-")
         basic.showNumber(ScoreAdversaire)
     } else {
-        if (MonChoix == 0 && ChoixAdversaire == 1) {
+        if (MonChoix == 1 && ChoixAdversaire == 2) {
             basic.showLeds(`
                 . # # # #
                 # # # # #
@@ -72,7 +75,7 @@ radio.onReceivedNumberDeprecated(function (ChoixAdversaire) {
             basic.showString("-")
             basic.showNumber(ScoreAdversaire)
         } else {
-            if (MonChoix == 0 && ChoixAdversaire == 2) {
+            if (MonChoix == 1 && ChoixAdversaire == 3) {
                 basic.showLeds(`
                     # . . # #
                     . # . # #
@@ -94,7 +97,7 @@ radio.onReceivedNumberDeprecated(function (ChoixAdversaire) {
                 basic.showString("-")
                 basic.showNumber(ScoreAdversaire)
             } else {
-                if (MonChoix == 1 && ChoixAdversaire == 0) {
+                if (MonChoix == 2 && ChoixAdversaire == 1) {
                     basic.showLeds(`
                         . . . # #
                         . . # . #
@@ -116,7 +119,7 @@ radio.onReceivedNumberDeprecated(function (ChoixAdversaire) {
                     basic.showString(" - ")
                     basic.showNumber(ScoreAdversaire)
                 } else {
-                    if (MonChoix == 1 && ChoixAdversaire == 1) {
+                    if (MonChoix == 2 && ChoixAdversaire == 2) {
                         basic.showLeds(`
                             . # # # #
                             # # # # #
@@ -137,7 +140,7 @@ radio.onReceivedNumberDeprecated(function (ChoixAdversaire) {
                         basic.showString("-")
                         basic.showNumber(ScoreAdversaire)
                     } else {
-                        if (MonChoix == 1 && ChoixAdversaire == 2) {
+                        if (MonChoix == 2 && ChoixAdversaire == 3) {
                             basic.showLeds(`
                                 # . . # #
                                 . # . # #
@@ -159,7 +162,7 @@ radio.onReceivedNumberDeprecated(function (ChoixAdversaire) {
                             basic.showString("-")
                             basic.showNumber(ScoreAdversaire)
                         } else {
-                            if (MonChoix == 2 && ChoixAdversaire == 0) {
+                            if (MonChoix == 3 && ChoixAdversaire == 1) {
                                 basic.showLeds(`
                                     . . . # #
                                     . . # . #
@@ -180,7 +183,7 @@ radio.onReceivedNumberDeprecated(function (ChoixAdversaire) {
                                 basic.showString("-")
                                 basic.showNumber(ScoreAdversaire)
                             } else {
-                                if (MonChoix == 2 && ChoixAdversaire == 1) {
+                                if (MonChoix == 3 && ChoixAdversaire == 2) {
                                     basic.showLeds(`
                                         . # # # #
                                         # # # # #
